@@ -4,14 +4,16 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.util.Date;
 
 public class Catalog {
     int catalogID;
-    @NotEmpty(message = "required")
+    @Size(min = 6, message = "* Vui lòng nhập hơn 5 ký tự")
     String catalogName;
-    @NotEmpty(message = "Không được để trống")
+
     String catalogDescription;
+    @NotNull(message = "* required")
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     Date createDate;
     Boolean catalogStatus;

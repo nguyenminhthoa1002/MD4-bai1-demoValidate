@@ -268,63 +268,68 @@
                     <!-- /.card-header -->
                     <div class="card-body">
                         <table id="example1" class="table table-bordered table-striped text-center">
-                            <f:form action="catalogController/create"
+                            <f:form action="create" modelAttribute="catNew"
                                     method="post">
                                 <div class="modal-body">
                                     <div class="input-group mb-3">
                                                         <span class="input-group-text"
                                                               id="basic-addon1">Name</span>
-                                        <f:input path="name" type="text" class="form-control"
+                                        <f:input path="catalogName" type="text" class="form-control"
                                                  placeholder="Enter catalog's name"
                                                  aria-label="catalogName" aria-describedby="basic-addon1"
                                                  name="catalogName"/>
-                                        <f:errors path="name" cssClass="error"/>
+                                    </div>
+                                    <div>
+                                        <f:errors path="catalogName" cssStyle="color: red" cssClass="error" />
                                     </div>
                                     <div class="input-group mb-3">
                                                     <span class="input-group-text"
                                                           id="basic-addon2">Description</span>
-                                        <f:input path="description" type="text" class="form-control"
+                                        <f:input path="catalogDescription" type="text" class="form-control"
                                                placeholder="Enter catalog's description"
                                                aria-label="catalogDescription"
                                                aria-describedby="basic-addon2"
                                                name="catalogDescription"/>
-                                        <f:errors path="description" cssClass="error"/>
+                                        <f:errors path="catalogDescription" cssClass="error"/>
                                     </div>
-<%--                                    <div class="input-group mb-3">--%>
-<%--                                                    <span class="input-group-text"--%>
-<%--                                                          id="basic-addon3">Create Date</span>--%>
-<%--                                        <input type="date" class="form-control"--%>
-<%--                                               placeholder="Enter catalog's description"--%>
-<%--                                               aria-label="catalogDescription"--%>
-<%--                                               aria-describedby="basic-addon3" name="createDate">--%>
-<%--                                    </div>--%>
-<%--                                    <div class="input-group mb-3">--%>
-<%--                                                    <span class="input-group-text"--%>
-<%--                                                          id="catalogStatus">Catalog Status</span>--%>
-<%--                                    </div>--%>
-<%--                                    <div style="display: inline-block !important;">--%>
-<%--                                        <div class="form-check form-check-inline">--%>
-<%--                                            <input class="form-check-input" type="radio"--%>
-<%--                                                   name="catalogStatus"--%>
-<%--                                                   id="catalogStatus1" value="true" checked>--%>
-<%--                                            <label class="form-check-label" for="catalogStatus1">Hoạt--%>
-<%--                                                động</label>--%>
-<%--                                        </div>--%>
-<%--                                        <div class="form-check form-check-inline">--%>
-<%--                                            <input class="form-check-input" type="radio"--%>
-<%--                                                   name="catalogStatus"--%>
-<%--                                                   id="catalogStatus2" value="false">--%>
-<%--                                            <label class="form-check-label" for="catalogStatus2">Không hoạt--%>
-<%--                                                động</label>--%>
-<%--                                        </div>--%>
-<%--                                    </div>--%>
+                                    <div class="input-group mb-3">
+                                                    <span class="input-group-text"
+                                                          id="basic-addon3">Create Date</span>
+                                        <f:input path="createDate" type="date" class="form-control"
+                                               placeholder="Enter catalog's description"
+                                               aria-label="catalogDescription"
+                                               aria-describedby="basic-addon3" name="createDate"/>
+                                    </div>
+                                    <div>
+                                        <f:errors path="createDate" cssStyle="color: red" cssClass="error"/>
+                                    </div>
+                                    <div class="input-group mb-3">
+                                                    <span class="input-group-text"
+                                                          id="catalogStatus">Catalog Status</span>
+                                    </div>
+                                    <div style="display: inline-block !important;">
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio"
+                                                   name="catalogStatus"
+                                                   id="catalogStatus1" value="true" checked>
+                                            <label class="form-check-label" for="catalogStatus1">Hoạt
+                                                động</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio"
+                                                   name="catalogStatus"
+                                                   id="catalogStatus2" value="false">
+                                            <label class="form-check-label" for="catalogStatus2">Không hoạt
+                                                động</label>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary"
                                             data-bs-dismiss="modal">
                                         Close
                                     </button>
-                                    <f:input path="submit" type="submit" name="action" value="Create"
+                                    <input type="submit" name="action" value="Create"
                                            class="btn btn-primary"/>
                                 </div>
                             </f:form>

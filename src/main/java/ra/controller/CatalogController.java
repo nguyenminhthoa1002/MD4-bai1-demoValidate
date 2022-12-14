@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -36,7 +37,7 @@ public class CatalogController {
     }
 
     @PostMapping("create")
-    public String create(@Valid Catalog catNew, BindingResult br){
+    public String create(@Valid @ModelAttribute("catNew") Catalog catNew, BindingResult br){
         if (br.hasErrors()){
             return "newCatalog";
         } else {
